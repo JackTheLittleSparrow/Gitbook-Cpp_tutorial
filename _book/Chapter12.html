@@ -362,6 +362,24 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="protobuf&#x7EC4;&#x4EF6;">Protobuf&#x7EC4;&#x4EF6;</h1>
+<p>protobuf&#x5168;&#x79F0;Google Protocol Buffers&#xFF0C; &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B9A;&#x4E49;protobuf&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;&#x7528;protobuf&#x7F16;&#x8BD1;&#x5668;&#x751F;&#x6210;&#x7279;&#x5B9A;&#x8BED;&#x8A00;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;</p>
+<h4 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h4>
+<ul>
+<li>&#x7F16;&#x5199;.proto&#x6587;&#x4EF6;</li>
+<li>&#x7F16;&#x8BD1;.proto&#x6587;&#x4EF6;&#xFF0C;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x8BED;&#x8A00;&#x7684;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;</li>
+</ul>
+<pre><code class="lang-cpp">protoc --cpp_out=./test_pb.proto
+</code></pre>
+<p>&#x751F;&#x6210;<code>test_pb.h test_pb.cc</code>&#x6587;&#x4EF6;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta"># &#x5B8C;&#x6574;&#x547D;&#x4EE4;</span>
+protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/xxx.proto
+</code></pre>
+<h4 id="protobuf&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x529F;&#x80FD;&#x662F;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;">protobuf&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x529F;&#x80FD;&#x662F;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;</h4>
+<p>&#x6709;&#x5F88;&#x591A;&#x63A5;&#x53E3;&#xFF0C;&#x8BE6;&#x89C1;&#x6587;&#x6863;</p>
+<p>reference:</p>
+<p><a href="https://developers.google.cn/protocol-buffers/docs/cpptutorial" target="_blank">https://developers.google.cn/protocol-buffers/docs/cpptutorial</a></p>
+<p><a href="https://www.jianshu.com/p/a24c88c0526a" target="_blank">https://www.jianshu.com/p/a24c88c0526a</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/141415216ppp" target="_blank">https://zhuanlan.zhihu.com/p/141415216ppp</a></p>
 
                                 
                                 </section>
@@ -405,7 +423,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Protobuf组件","level":"1.13","depth":1,"next":{"title":"Pipeline组件","level":"1.14","depth":1,"path":"Chapter13.md","ref":"Chapter13.md","articles":[]},"previous":{"title":"TCPEngine组件","level":"1.12","depth":1,"path":"Chapter11.md","ref":"Chapter11.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter12.md","mtime":"2021-07-20T16:46:26.055Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-22T09:36:06.757Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Protobuf组件","level":"1.13","depth":1,"next":{"title":"Pipeline组件","level":"1.14","depth":1,"path":"Chapter13.md","ref":"Chapter13.md","articles":[]},"previous":{"title":"TCPEngine组件","level":"1.12","depth":1,"path":"Chapter11.md","ref":"Chapter11.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter12.md","mtime":"2021-07-22T11:53:55.250Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-22T11:58:13.505Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
