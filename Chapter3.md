@@ -161,3 +161,86 @@ nohup run.sh >> train.log 2>&1 &
   + 按行处理文件，或者按指定分割符处理，默认分隔符是空格，换行，和tab
   + -v 定义变量（局部） -F 定义分隔符
   + 例： awk  '{printf $1, $4}'  test.txt      打印test.txt中每一行的第一项和第四项
+
+#### -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+#### 以下为shell book补充内容
+
+#### 变量替换
+
+```bash
+${var}
+${var:-hello}	#当var为空时返回hello，但不改变变量的值
+${var:=hello}	#当var为空时放回hello，同时设置变量值为hello
+${var:+hello}	#当var被定义时返回hello，但不改变变量的值
+${var:?massage}	#当var为空时将message送到标准出错输出。如果此命令出现在shell脚本中，那么脚本将停止运行。
+				#如果var已被赋值那么不会执行？后面，也就是等同于${var}
+```
+
+
+
+### 布尔运算符
+
+```bash
+# ！ -a -o
+# 非 与(and) 或(or)
+if [ 3 -eq 3 -a 3 lt 5 ]
+then
+	echo 'ok'
+fi;
+```
+
+#### getopts用法
+
+> 每当循环执行时，getopts都会检查下一个命令选项，如果这些选项出想在option中，则表示是合法选项，否则不是合法选项，并将这些合法选项保存在VARIBLE这个变量中。
+>
+> getopts还包含两个内置变量`OPTARG`和`OPTIND`
+>
+> `OPTARG`就是将选项后面的参数（或者描述信息DESCRIPTION）保存在这个变量当中。
+>
+> `OPTIND`这个表示命令行的下一个选项或参数的索引（文件名不算选项或参数）
+
+#### 如何获取函数返回值
+
+```bash
+#!/bin/bash
+
+function sum()
+{
+	echo `expr 1 + 2 + 3`		#expr算数表达式每一项需要空格隔开，否则会理解为字符串
+}
+
+num=$(sum)						#这样即可取到返回值
+```
+
+#### 重定向之文档嵌入Here Documents
+
+！第二个表示符前后不能有任何字符，包括空格
+
+```bash
+#！/bin/bash
+
+wc -l << WAIBIWAIBI
+	adsfjalsf
+	adsjfaklf
+	adfa
+WAIBIWAIBI
+
+#output: 3
+```
+
+#### SHELL文件包含`source filename`or `. filename`
+
+```
+#!/bin/bash
+#file sub.sh
+
+name="hello"
+
+#!/bin/bash
+#file test.sh
+
+. ./sub.sh
+echo ${name}
+```
+
